@@ -44,9 +44,11 @@ def book_court(court, desired_time, username, password):
             next_button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.NAME, "next")))
             next_button.click()
             next_page = booking_timeslot(desired_time, driver)
-        except TimeoutException:
+        except TimeoutException
+            print("reached end of options ")
             break
         except ElementClickInterceptedException:
+            print("no time slot available for court ", court)
             break
     driver.quit()
 
